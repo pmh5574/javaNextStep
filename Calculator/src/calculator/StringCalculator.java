@@ -5,6 +5,7 @@ import java.util.regex.Pattern;
 
 public class StringCalculator {
     int commaSemi(String str) {
+        // 리팩토링 예정 깊이 1 else 사용 x
         String[] strArr = str.trim().split(",|:");
 
         int result = 0;
@@ -27,6 +28,7 @@ public class StringCalculator {
     }
 
     int customPattern(String str) {
+        // 리팩토링 예정 깊이 1 else 사용 x
         Pattern pattern = Pattern.compile("//(.)\\n(.*)");
         Matcher matcher = pattern.matcher(str);
 

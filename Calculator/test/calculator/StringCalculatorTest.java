@@ -24,13 +24,9 @@ public class StringCalculatorTest {
     }
 
     @Test
-    // 성공
+    // 음수시 RuntimeException
     public void stringCommaSemiException() {
-
-        assertEquals(1, stringCalculator.commaSemi("1"));
-//        assertEquals(6, stringCalculator.commaSemi("1,2:3"));
-
-
+        assertThrows(RuntimeException.class, () -> stringCalculator.commaSemi("1,-2"));
     }
 
     @Test
