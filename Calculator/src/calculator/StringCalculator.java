@@ -7,24 +7,7 @@ public class StringCalculator {
     int commaSemi(String str) {
         // 리팩토링 예정 깊이 1 else 사용 x
         String[] strArr = str.trim().split(",|:");
-
-        int result = 0;
-
-        if (strArr[0] == null || strArr[0].equals("")) {
-            return result;
-        }
-
-        for (int i = 0; i < strArr.length; i++) {
-
-            result += Integer.parseInt(strArr[i]);
-
-        }
-
-        if (result < 0) {
-            throw new RuntimeException();
-        }
-
-        return result;
+        return intZeroCheck(repeatStrArr(strArr));
     }
 
     int customPattern(String str) {
@@ -36,25 +19,33 @@ public class StringCalculator {
 
             String[] strArr = matcher.group(2).split(matcher.group(1));
 
-            int result = 0;
+            return intZeroCheck(repeatStrArr(strArr));
+        }
 
-            if (strArr[0] == null || strArr[0].equals("")) {
-                return result;
-            }
+        throw new RuntimeException();
 
-            for (int i = 0; i < strArr.length; i++) {
-                result += Integer.parseInt(strArr[i]);
+    }
 
-            }
-
-            if (result < 0) {
-                throw new RuntimeException();
-            }
-
-            return result;
-        }else {
+    int intZeroCheck(int result) {
+        if (result < 0) {
             throw new RuntimeException();
         }
 
+        return result;
     }
+
+    int repeatStrArr(String[] arr) {
+        int result = 0;
+
+        if (arr[0] == null || arr[0].equals("")) {
+            return result;
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            result += Integer.parseInt(arr[i]);
+        }
+
+        return result;
+    }
+
 }
