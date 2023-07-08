@@ -19,12 +19,12 @@ public class CalculatorTest {
     @Test
     public void add() {
         assertEquals(9, calculator.add(6, 3));
-        System.out.println("add");
+//        System.out.println("add");
     }
 
     @Test
     public void subtract() {
         assertEquals(3, calculator.subtract(6, 3));
-        System.out.println("subtract");
+//        System.out.println("subtract");
     }
 }
